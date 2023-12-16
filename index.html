@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Generator</title>
+  <!-- Start Boot Strap  -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <!-- Start Main Style -->
+  <link rel="stylesheet" href="./css/mainStyle.css">
+  <!-- Start Font Awesome -->
+  <link rel="stylesheet" href="./css/all.min.css">
+</head>
+
+<body class="vh-100">
+
+
+
+  <ul class="nav nav-pills p-3 p-md-5 mb-md-3 justify-content-center" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="Quots nav-link active" id="Quote" data-bs-toggle="pill" data-bs-target="#QuoteSection"
+        type="button" role="tab" aria-controls="QuoteSection" aria-selected="true">Quote</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="Movies nav-link" id="MoviesSection" data-bs-toggle="pill" data-bs-target="#Movies" type="button"
+        role="tab" aria-controls="Movies" aria-selected="false">Movies</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="Memes nav-link" id="Memes" data-bs-toggle="pill" data-bs-target="#memesSection" type="button"
+        role="tab" aria-controls="memesSection" aria-selected="false">Memes</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="QuoteSection" role="tabpanel" aria-labelledby="Quote" tabindex="0">
+      <div class="container">
+        <div class="bg-light position-relative  rounded-3 mt-2 mt-md-5 p-4">
+          <i class="fa-solid fa-quote-left"></i>
+          <h1 class="pt-2">Quote of the Day</h1>
+          <p class="pt-3">Press the button below to recieve a random quote!</p>
+          <button class="py-3  px-5  btn btn-secondary" onclick="generateQuote();">New Quote</button>
+          <div class="py-4" class="imgs" id="quoteimgs">
+            <img style="border-radius:50% ;width:150px;height:150px;" src="./imges/1.jpg" alt="">
+          </div>
+          <p class="pb-4" id="quoteOutput">
+            “Be yourself; everyone else is already taken.”
+          </p>
+          <p class="py-4" id="authorOutput">
+            ― Oscar Wilde
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="Movies" role="tabpanel" aria-labelledby="MoviesSection" tabindex="0">
+      <div class="container">
+        <div class="bg-light rounded-3 mt-5 p-4">
+          <h1 class="pt-2">Movies of the Day</h1>
+          <p class="pt-3">Press the button below to get your random Marvel Movie!</p>
+          <button onclick="moviesRandom()" class="py-3  px-5  btn btn-secondary" ;>New Quote</button>
+          <div class="py-4" class="imgs" id="quoteimgs">
+  
+          </div>
+          <div class="moviesImges">
+            <p class="pb-4 moveimg  " id="movieimgs">
+              <img src="./imges/Movies/1.jpg">
+            </p>
+            <p class="py-4 text-start " id="movieNames">
+              ― Iron Man 2008
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="memesSection" role="tabpanel" aria-labelledby="Memes" tabindex="0">
+      <div class="container">
+        <div class="bg-light rounded-3 mt-2 p-4 d-lg-flex">
+          <div class="leftCorner w-md-50">
+            <h1 class="pt-2">Memes of the Day</h1>
+            <p class="pt-3">Press the button below to recieve a random Meme!</p>
+            <button onclick="memesRandom()" class="py-md-3  px-md-5  btn btn-secondary" ;>New Quote</button>
+          </div>
+          <div class="pt-4 w-md-50 m-auto" class="imgs" id="memesimgs">
+            <img src="./imges/Mems/1.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Start Main Js -->
+  <script src="./js/Mainjs.js"></script>
+  <!-- Start Bootstrap js  -->
+  <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

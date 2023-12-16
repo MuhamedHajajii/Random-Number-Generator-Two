@@ -1,0 +1,169 @@
+
+    .tab-pane {
+    text-align: center;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 992px) {
+    h1 {
+      font-size: 80px;
+      font-family: Impact;
+    }
+    p {
+      font-size: 25px;
+    }  
+  }
+  @media screen and (min-width: 768px) {
+    h1 {
+      font-size: 45px;
+      font-family: Impact;
+    }
+    p {
+      font-size: 25px;
+    }  
+  }
+  @media screen and (max-width: 767px) {
+    h1 {
+      font-size: 32px;
+      font-family: Impact;
+    }
+    p {
+      font-size: 16px;
+    }  
+    .tab-pane i {
+      display: none;
+    }
+  }
+
+  #quoteOutput {
+    max-width: fit-content;
+    margin: auto;
+  }
+  * {
+    text-wrap: balance;
+    
+  }
+::selection {
+  color: white;
+  background-color: rgb(58, 58, 34);
+} 
+
+.imgs {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+}
+@media screen and (min-width: 768px) {
+  body {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+@media screen and (max-width: 767px) {
+  body {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+body::after {
+  content: '';
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.521);
+  inset: 0;
+  z-index: -1;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: transparent;
+}
+.nav-pills .nav-link {
+  position: relative;
+  padding: 0;
+  margin-inline: 10px;
+}
+.nav-pills .nav-link::after {
+  content: '';
+  width: 0%;
+  height: 3px;
+  position: absolute;
+  background-color: white;
+  bottom: -3px;
+  left: 0;
+  transition: 0.5s;
+}
+.nav-pills .nav-link.active::after {
+  content: '';
+  width: 100%;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+}
+.nav-pills li .nav-link {
+  color: white;
+}
+.nav-pills {
+  width: fit-content;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.10);
+  border-radius: 100vh;
+}
+
+:has(.nav-link.active.Quots) body {
+  background-image: url('../imges/bg-3.jpg');
+  background-position: center;
+  background-size: cover;
+
+}
+:has(.nav-link.active.Movies) body {
+  background-image: url('../imges/bg-2.jpg');
+  background-position: center;
+  background-size: cover;
+}
+:has(.nav-link.active.Memes) body {
+  background-image: url('../imges/bg-4.jpg');
+  background-position: center;
+  background-size: cover;
+}
+:has(.nav-link.active.Moba) body {
+  background-image: url('../imges/bg-1.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .fa-quote-left {
+    position: absolute;
+    left: -5%;
+    top: -5%;
+    color: white;
+    transform: translate(-50%,-50%);
+    font-size: 50px;
+    opacity: 0;
+    transition: 0.5s;
+    }
+    
+    :has(.nav-link.active.Quots) .fa-quote-left {
+      opacity: 1;
+    }
+    .w-md-50 {
+      width: 50%;
+    }
+}
+.moviesImges p {
+  width: 70%;
+}
+.moviesImges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.moveimg img {
+  max-width: 85%;
+  border-radius: 20px;
+}
+
+#memesimgs img {
+  max-width:90%;
+}
+
+.fade {
+  transition: opacity .3s linear;
+}
