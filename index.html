@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="./css/all.min.css">
 </head>
 
-<body class="vh-100">
+<body>
 
 
 
@@ -38,9 +38,18 @@
           <i class="fa-solid fa-quote-left"></i>
           <h1 class="pt-2">Quote of the Day</h1>
           <p class="pt-3">Press the button below to recieve a random quote!</p>
-          <button class="py-3  px-5  btn btn-secondary" onclick="generateQuote();">New Quote</button>
+          <div class="btns">
+            <div class="actions">
+              <ul>
+                <li class="sound"><i class="fas fa-volume-up"></i></li>
+                <li class="copy"><i class="fas fa-copy"></i></li>
+                <li class="twitter"><i class="fa-brands fa-x-twitter"></i></li>
+              </ul>
+            </div>
+            <button class="py-md-3  px-md-5  btn btn-secondary cardBtn" onclick="generateQuote();">New Quote</button>
+          </div>
           <div class="py-4" class="imgs" id="quoteimgs">
-            <img style="border-radius:50% ;width:150px;height:150px;" src="./imges/1.jpg" alt="">
+            <img src="./imges/1.jpg" alt="">
           </div>
           <p class="pb-4" id="quoteOutput">
             “Be yourself; everyone else is already taken.”
@@ -58,7 +67,6 @@
           <p class="pt-3">Press the button below to get your random Marvel Movie!</p>
           <button onclick="moviesRandom()" class="py-3  px-5  btn btn-secondary" ;>New Quote</button>
           <div class="py-4" class="imgs" id="quoteimgs">
-  
           </div>
           <div class="moviesImges">
             <p class="pb-4 moveimg  " id="movieimgs">

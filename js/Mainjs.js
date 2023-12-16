@@ -46,30 +46,37 @@ var quoteArrayName = [
   `― Martin Luther King Jr., A Testament of Hope: The Essential Writings and Speeches`
 ];
 var quoteArrayImgs = [
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/2.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/3.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/4.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/5.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/6.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/7.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/8.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/9.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/10.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/11.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/12.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/13.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/14.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/15.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/16.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/17.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/18.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/19.jpg" alt="">',
-  '<img style="border-radius:50% ;width:150px;height:150px;" src="./imges/20.jpg" alt="">'
+  '<img   src="./imges/2.jpg" alt="">',
+  '<img   src="./imges/3.jpg" alt="">',
+  '<img   src="./imges/4.jpg" alt="">',
+  '<img   src="./imges/5.jpg" alt="">',
+  '<img   src="./imges/6.jpg" alt="">',
+  '<img   src="./imges/7.jpg" alt="">',
+  '<img   src="./imges/8.jpg" alt="">',
+  '<img   src="./imges/9.jpg" alt="">',
+  '<img   src="./imges/10.jpg" alt="">',
+  '<img   src="./imges/11.jpg" alt="">',
+  '<img   src="./imges/12.jpg" alt="">',
+  '<img   src="./imges/13.jpg" alt="">',
+  '<img   src="./imges/14.jpg" alt="">',
+  '<img   src="./imges/15.jpg" alt="">',
+  '<img   src="./imges/16.jpg" alt="">',
+  '<img   src="./imges/17.jpg" alt="">',
+  '<img   src="./imges/18.jpg" alt="">',
+  '<img   src="./imges/19.jpg" alt="">',
+  '<img   src="./imges/20.jpg" alt="">'
 ];
 
 var usedIndexs = [];
+let loadingText = document.querySelector('.cardBtn');
+var soundBtn = document.querySelector('.sound');
+var copyBtn = document.querySelector('.copy');
+var twitterBtn = document.querySelector('.twitter');
+
 
 function generateQuote () {
+  loadingText.innerText = 'Loading Quote';
+  loadingText.classList.add('Loading');
   if (usedIndexs.length -1 == quoteArray.length -1) {usedIndexs = [];}
 
   var checkUsedIndex = false;
@@ -85,8 +92,24 @@ usedIndexs.push(quoteArray[randNumber]);
   document.getElementById('quoteimgs').innerHTML = quoteArrayImgss;
   document.getElementById('authorOutput').innerHTML = ArrayName;
   document.getElementById('quoteOutput').innerHTML = quoteName;
+  loadingText.innerText = 'New Quote';
+  loadingText.classList.remove('Loading');
+
 }
 
+var quoteText = document.getElementById('quoteOutput');
+var autherText = document.getElementById('authorOutput');
+soundBtn.addEventListener('click' , ()=> {
+  let utterance = new SpeechSynthesisUtterance(`${quoteText.innerHTML}  by ${autherText.innerHTML}`);
+  speechSynthesis.speak(utterance);
+});
+copyBtn.addEventListener('click' , ()=> {
+  navigator.clipboard.writeText(quoteText.innerText)
+});
+twitterBtn.addEventListener('click' , ()=> {
+  let tweetUrl = `https://twitter.com/compose/tweet?url=${quoteText.innerText}`;
+  window.open(tweetUrl, '_blank');
+});
 
 // Start Movies 
 
@@ -126,6 +149,7 @@ var movieName = [
 
 var movieUsedIndex = [];
 
+
 function moviesRandom () {
   if (movieUsedIndex.length -1 == moviesSection.length -1 ) {
     movieUsedIndex = [];
@@ -140,7 +164,6 @@ function moviesRandom () {
   movieUsedIndex.push(movieName[movieNumber])
   document.getElementById('movieimgs').innerHTML = moviesSection[movieNumber];
   document.getElementById('movieNames').innerHTML = movieName[movieNumber];
-
 }
 
 // Start Memes
